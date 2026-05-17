@@ -1,21 +1,25 @@
 {
   "expo": {
-    "name": "a0-project",
-    "slug": "snack-23ff3c29-9ee8-493d-be66-f76568276004",
+    "name": "Giga3 AI",
+    "slug": "giga3-ai",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "giga3ai",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "description": "AI-powered creator, student, and productivity platform",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.giga3ai.app"
     },
     "android": {
+      "package": "com.giga3ai.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -24,8 +28,15 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
+      "bundler": "metro",
+      "output": "static",
       "favicon": "./assets/favicon.png"
     },
-    "description": "Quickly generate React Native components with AI"
+    "plugins": [],
+    "extra": {
+      "eas": {
+        "projectId": "giga3-ai-production"
+      }
+    }
   }
 }
