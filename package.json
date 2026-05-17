@@ -5,11 +5,12 @@
   "private": true,
   "main": "index.ts",
   "scripts": {
-    "start": "npx expo start",
-    "android": "npx expo run:android",
-    "ios": "npx expo run:ios",
-    "web": "npx expo start --web"
-  },
+  "start": "expo start",
+  "android": "expo start --android",
+  "ios": "expo start --ios",
+  "web": "expo start --web",
+  "build": "expo export --platform web"
+}
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
     "@react-navigation/bottom-tabs": "^7.16.1",
