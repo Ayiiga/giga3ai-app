@@ -1,10 +1,17 @@
-import { Password } from "@convex-dev/auth/providers/Password";
+// convex/auth.ts
 import { convexAuth } from "@convex-dev/auth/server";
-// @ts-expect-error Injected by a0 Convex sync.
-import { A0Social } from "./a0Social";
+import Google from "@auth/core/providers/google";
+import Resend from "@auth/core/providers/resend";
 
-declare const process: { env: Record<string, string | undefined> };
-
-export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
-  providers: [Password, A0Social],
+export const { auth, signIn, signOut, store } = convexAuth({
+  providers: [
+    Google({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    }),
+    Resend({
+      apiKey: process.env.AUTH_RESEND_KEY,
+      from: "Giga3 AI <onboarding@giga3ai.com>", // Update to your verified domain later
+    })
+  ],
 });
